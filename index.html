@@ -1,0 +1,62 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Nature Gallery</h1>
+        <p>Explore the beauty of nature</p>
+    </header>
+
+<nav class="filters">
+    <button class="active" onclick="filterImages('all', event)">All</button>
+    <button onclick="filterImages('mountains', event)">Mountains</button>
+    <button onclick="filterImages('beach', event)">Beach</button>
+    <button onclick="filterImages('forest', event)">Forest</button>
+    <button onclick="filterImages('sunset', event)">Sunset</button>
+</nav>
+
+
+    <main class="gallery">
+        <div class="gallery-item" data-category="mountains">
+            <img src="images/image1.jpg" alt="Beautiful mountains"
+                 onclick="openLightbox(this)">
+            <h3>Mountains</h3>
+        </div>
+
+        <div class="gallery-item" data-category="beach">
+            <img src="images/image2.jpg" alt="Beautiful beach"
+                 onclick="openLightbox(this)">
+            <h3>Beach</h3>
+        </div>
+
+        <div class="gallery-item" data-category="forest">
+            <img src="images/image3.jpg" alt="Green forest"
+                 onclick="openLightbox(this)">
+            <h3>Forest</h3>
+        </div>
+
+        <div class="gallery-item" data-category="sunset">
+            <img src="images/image4.jpg" alt="Beautiful sunset"
+                 onclick="openLightbox(this)">
+            <h3>Sunset</h3>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="close-btn" onclick="closeLightbox()">×</button>
+        <button class="nav-btn prev" onclick="changeImage(-1, event)">❮</button>
+        <img id="lightbox-img" src="" alt="Enlarged nature image">
+        <button class="nav-btn next" onclick="changeImage(1, event)">❯</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
